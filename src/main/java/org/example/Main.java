@@ -10,6 +10,7 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.Optional.*;
 
 public class Main {
     static void scriere(List<Angajat> angajat) throws IOException {
@@ -113,7 +114,7 @@ public class Main {
                         .filter(angajat1 -> angajat1.getNumele().equalsIgnoreCase("ion"))
                         .findAny();
         angajatt.ifPresentOrElse(angajat1 -> System.out.println("Firma are cel puțin un Ion angajat"),
-                                System.out.println("Firma nu are nici un Ion angajat")
+                () ->  System.out.println("Firma nu are nici un Ion angajat")
                         );
         /**
          * ex10
